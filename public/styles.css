@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    height: 100%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    color: whitesmoke;
+    font-family: 'Michroma', sans-serif;
+    background-color: rgba(43, 58, 199, 0.884);
+    width: 100%;
+    padding: 10px;
+    height:100px;
+    box-shadow:2px 5px 20px grey;
+}
+
+.data{
+    font-family: 'Michroma', sans-serif;
+    width: 70%;
+    padding: 10px;
+    height:100%;
+    text-align: center;
+    background-color: whitesmoke;
+    color: rgba(43, 58, 199, 0.884);
+    align-self: center;
+}
+
+.submit-btn {
+    width: 50px;
+    height: 38px;
+    background-color: rgba(43, 58, 199, 0.884);
+    color: whitesmoke;
+    border: none;
+}
+
+#cityInput{
+    width: 200px;
+    height: 38px;
+}
+.icon {
+    background-color: darkgray;
+    border-radius: 100%;
+}
