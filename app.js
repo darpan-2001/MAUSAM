@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const port = process.env.PORT || 8000
 const https = require("https");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -44,5 +45,5 @@ app.post("/", (req,res) => {
 
 
 app.listen(8000, () => {
-    console.log("Server running on port 8000");
+    console.log(`Server running on port ${port}`);
 });
