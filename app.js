@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const port = process.env.PORT || 8000
 const https = require("https");
@@ -7,17 +6,16 @@ const ejs = require("ejs");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-app.get("/", (req,res) => {
-    // res.sendFile(__dirname+"/index.html");   
+app.get("/", (req,res) => {  
     res.render("home"); 
 });
 
 app.post("/", (req,res) => {
     let city = req.body.cityName;
-    const apiKey = process.env.API_KEY;
+    const apiKey = "943501ad1627cb41bf9d3230a8b8a0a0";
     let url = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+ apiKey;
     try{
         https.get(url, (response) => {
@@ -38,10 +36,6 @@ app.post("/", (req,res) => {
         res.redirect("/home");
     }
 });
-
-// app.get("/data", (req,res) => {
-//     res.render("data", {weatherDesc: description});
-// });
 
 
 app.listen(port, () => {
