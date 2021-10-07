@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV != "production") {
+    require("dotenv").config();
+}
+
 const express = require("express");
 const port = process.env.PORT || 8000
 const https = require("https");
@@ -15,7 +19,7 @@ app.get("/", (req,res) => {
 
 app.post("/", (req,res) => {
     let city = req.body.cityName;
-    const apiKey = "943501ad1627cb41bf9d3230a8b8a0a0";
+    const apiKey = process.env.API_KEY;
     let url = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+ apiKey;
     try{
         https.get(url, (response) => {
